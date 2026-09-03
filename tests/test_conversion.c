@@ -37,7 +37,7 @@ static int check_double_special(const char *input, double expected)
 int main(void)
 {
     int passed = 0;
-    int total = 20;
+    int total = 24;
 
     passed += check_int("12345", 12345);
     passed += check_int("-12345", -12345);
@@ -52,13 +52,18 @@ int main(void)
     passed += check_int_invalid("abc");
     passed += check_int_invalid("+");
     passed += check_int_invalid("-");
+    passed += check_int_invalid(NULL);
+
     passed += check_double("123.45", 123.45);
     passed += check_double("-12.5", -12.5);
     passed += check_double("+0.25", 0.25);
     passed += check_double("42", 42.0);
+    passed += check_double("  -8.75", -8.75);
     passed += check_double_special(".5", 0.5);
     passed += check_double_special("42.", 42.0);
     passed += check_double_invalid(".");
+    passed += check_double_invalid("abc");
+    passed += check_double_invalid(NULL);
 
     printf("Tests passed: %d/%d\n", passed, total);
     return passed == total ? 0 : 1;
