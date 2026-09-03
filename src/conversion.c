@@ -1,6 +1,7 @@
 #include "conversion.h"
 #include <ctype.h>
 #include <limits.h>
+#include <stddef.h>
 
 int my_atoi(const char *str, int *result)
 {
