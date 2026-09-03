@@ -1,0 +1,146 @@
+ #include<stdio.h>
+   int main()
+   {
+           int i=0,j=1,r=0;
+           char s[100];
+           printf("enter the string:\n");
+           scanf("%s",s);
+           while(s[i]==' '||s[i]=='\t')
+                  i++;
+          while(s[i]=='"')
+          i++;
+          if(s[i]=='-')
+          {
+                  j=-1;
+                  i++;
+          }
+          if(s[i]=='+')
+                  i++;
+          while(s[i]>='0'&&s[i]<='9')
+          {
+                  r=r*10+(s[i]-'0');
+                  i++;
+          }
+          r*=j;
+          printf("atoi of %d\n",r);
+  return 0;
+  }
+    #include<stdio.h>
+    int main()
+    {
+            int i=0,j=1,r=0;
+            char s[100];
+            float k=0,l=0.1;
+            printf("enter the string:\n");
+            scanf("%s",s);
+            while(s[i]==' '||s[i]=='\t')
+                    i++;
+            while(s[i]=='"')
+            i++;
+            if(s[i]=='-')
+            {
+                    j=-1;
+                    i++;
+            }
+            else if(s[i]=='+')
+                    i++;
+    
+            while(s[i]>='0'&&s[i]<='9')
+            {
+                    r=r*10+(s[i]-'0');
+                    i++;
+            }
+            if(s[i]=='.')
+            {
+            i++;
+                    while(s[i]>='0'&&s[i]<='9')
+                    {
+                            k=k+(s[i]-'0')*l;
+                            l=l/10;
+                            i++;
+                    }
+            }
+            k=k+r;
+            printf("atof of %.2f\n",k*j);
+    return 0;
+  }
+
+// atoi and atof by using function.
+/* 	#include<stdio.h>
+    void my_atoi(char []);
+    void my_atof(char []);
+    int main()
+    {
+            //int i=0,j=1,r=0;
+            char s1[100];
+            char s2[100];
+            printf("enter atoi the string:\n");
+            scanf("%s",s1);
+            printf("enter atof the string:\n");
+            scanf("%s",s2);
+            my_atoi(s1);
+            my_atof(s2);
+   
+            return 0;
+            }
+    void my_atoi(char s[])
+    {
+            int i=0,j=1,r=0;
+   
+            while(s[i]==' '||s[i]=='\t')
+                    i++;
+            while(s[i]=='"')
+            i++;
+            if(s[i]=='-')
+            {
+                    j=-1;
+                    i++;
+            }
+            if(s[i]=='+')
+                    i++;
+            while(s[i]>='0'&&s[i]<='9')
+            {
+                    r=r*10+(s[i]-'0');
+                    i++;
+            }
+            r*=j;
+            printf("atoi of %d\n",r);
+    return 0;
+    }
+   
+    void my_atof(char s[])
+    {
+    int i=0,r=0,j=1;
+    float k=0,l=0.1;
+   
+    while(s[i]==' '||s[i]=='\t')
+                    i++;
+            while(s[i]=='"')
+            i++;
+            if(s[i]=='-')
+            {
+                    j=-1;
+                    i++;
+            }
+            else if(s[i]=='+')
+                    i++;
+   
+            while(s[i]>='0'&&s[i]<='9')
+            {
+                    r=r*10+(s[i]-'0');
+                    i++;
+          }
+            if(s[i]=='.')
+            {
+            i++;
+                    while(s[i]>='0'&&s[i]<='9')
+                    {
+                            k=k+(s[i]-'0')*l;
+                            l=l/10;
+                            i++;
+                  }
+          }
+          k=k+r;
+          printf("atof of %.2f\n",k*j);
+  return 0;
+  }*/
